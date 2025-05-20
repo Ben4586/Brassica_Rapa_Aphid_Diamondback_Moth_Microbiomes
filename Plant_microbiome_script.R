@@ -237,7 +237,7 @@ phyloseq::psmelt(ps1_genus_top10) %>%
   ggplot(data = ., aes(x = Treatment, y = Abundance)) +
   geom_boxplot(outlier.shape  = NA) +
   geom_jitter(aes(color = Genus), height = 0, width = .2) +
-  labs(x = "", y = "Relative abundance\n") +
+  labs(x = "", y = "Relative abundance (%)\n") +
   facet_wrap(~ OTU, scales = "free")
 
 #Agglomerate to the phylum level 
@@ -260,7 +260,7 @@ phyloseq::psmelt(ps1_phylum_relabun) %>%
   ggplot(data = ., aes(x = Treatment, y = Abundance)) +
   geom_boxplot(outlier.shape  = NA) +
   geom_jitter(aes(color = Phylum), height = 0, width = .2) +
-  labs(x = "", y = "Relative abundance\n") +
+  labs(x = "", y = "Relative abundance (%)\n") +
   facet_wrap(~ OTU, scales = "free")
 
 #Alpha diversity
