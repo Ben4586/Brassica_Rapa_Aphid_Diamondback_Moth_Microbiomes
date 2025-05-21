@@ -227,7 +227,7 @@ ps1_genus = tax_glom(ps_raw, "Genus", NArm = TRUE)
 top10_genera <- names(sort(taxa_sums(ps1_genus), decreasing=TRUE))[1:10]
 
 ps_genus <- phyloseq::tax_glom(ps1_genus, "Genus")
-ps1_genus_relabun <- transform_sample_counts(ps1_genus, function(OTU) OTU/sum(OTU) * 100)
+ps1_genus_relabun <- transform_sample_counts(ps_genus, function(OTU) OTU/sum(OTU) * 100)
 ps1_genus_top10 <- prune_taxa(top10_genera, ps1_genus_relabun)
 phyloseq::taxa_names(ps1_genus_top10) <- phyloseq::tax_table(ps1_genus_top10)[, "Genus"]
 phyloseq::otu_table(ps1_genus_top10)[1:5, 1:5]
