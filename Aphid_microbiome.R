@@ -94,7 +94,6 @@ head(track)
 
 #Assign taxonomy to ASVs
 taxa <- assignTaxonomy(seqtab.nochim, "data/silva_nr99_v138.1_train_set.fa.gz", multithread=FALSE, tryRC=TRUE) #tryRC = try reverse complement. 
-saveRDS(taxa, "C:/Users/bengsoon/Desktop/Plant_microbiome/Plant_microbiome_day21_root/taxa.rds")
 taxa.print <- taxa # Removing sequence rownames for display only
 rownames(taxa.print) <- NULL
 head(taxa.print)
@@ -503,3 +502,4 @@ phyloseq::psmelt(ps1_genus_top10) %>%
   geom_jitter(aes(color = Genus), height = 0, width = .2) +
   labs(x = "", y = "Relative abundance\n") +
   facet_wrap(~ OTU, scales = "free")
+
