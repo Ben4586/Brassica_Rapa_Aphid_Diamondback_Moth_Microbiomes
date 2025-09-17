@@ -94,7 +94,6 @@ head(track)
 
 #Assign taxonomy to ASVs
 taxa <- assignTaxonomy(seqtab.nochim, "data/silva_nr99_v138.1_train_set.fa.gz", multithread=FALSE, tryRC=TRUE) #tryRC = try reverse complement. 
-saveRDS(taxa, "C:/Users/bengsoon/Desktop/Plant_microbiome/Plant_microbiome_day21_root/taxa.rds")
 taxa.print <- taxa # Removing sequence rownames for display only
 rownames(taxa.print) <- NULL
 head(taxa.print)
@@ -284,4 +283,5 @@ sampleda <- sampleda[match(colnames(as.matrix(distme)),rownames(sampleda)),,drop
 sampleda$Group <- factor(sampleda$Treatment)
 set.seed(1024)
 adores <- adonis2(distme ~ Treatment, data=sampleda, permutation=9999)
+
 
