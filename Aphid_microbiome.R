@@ -398,27 +398,6 @@ pclass <- ggbartax(obj=classtaxa, facetNames="Time", topn = 10) +
   guides(fill= guide_legend(keywidth = 0.5, keyheight = 0.5))
 pclass
 
-#Plot venn diagram
-vennlist <- get_vennlist(obj=ps1, factorNames="Treatment")
-vennp <- venn.diagram(vennlist,
-                      height=5,
-                      width=5, 
-                      filename=NULL, 
-                      fill=c("#00AED7", "#FD9347"),
-                      cat.col=c("#00AED7", "#FD9347"),
-                      alpha = 0.85, 
-                      fontfamily = "serif",
-                      fontface = "bold",
-                      cex = 1.2,
-                      cat.cex = 1.3,
-                      cat.default.pos = "outer",
-                      cat.dist=0.1,
-                      margin = 0.1, 
-                      lwd = 3,
-                      lty ='dotted',
-                      imagetype = "svg")
-grid::grid.draw(vennp)
-
 #Alpha diversity
 #Plot richness boxplot
 divIdx = c("Observed", "Chao1", "Shannon", "Simpson")
@@ -463,11 +442,6 @@ plot_ordination(ps1, ordination, color="Treatment", shape = "Time") +
   theme(strip.background = element_blank()) +
   stat_ellipse()
 
-
-
-
-
-
 #Visualization of relative abundance
 #Agglomerate to the genus level 
 dna <- Biostrings::DNAStringSet(taxa_names(ps1))
@@ -502,4 +476,5 @@ phyloseq::psmelt(ps1_genus_top10) %>%
   geom_jitter(aes(color = Genus), height = 0, width = .2) +
   labs(x = "", y = "Relative abundance\n") +
   facet_wrap(~ OTU, scales = "free")
+
 
