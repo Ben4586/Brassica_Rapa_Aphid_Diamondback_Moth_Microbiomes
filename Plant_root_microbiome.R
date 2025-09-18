@@ -14,7 +14,6 @@ library(DECIPHER)
 library(stringr)
 library(MicrobiotaProcess)
 library(patchwork)
-library(VennDiagram)
 library(DESeq2)
 library(ggbeeswarm)
 library(ggrepel)
@@ -286,6 +285,7 @@ plot_ordination(ps.prop, bray.pcoa, color = "Treatment", axes = c(1,2)) +
   theme_classic() +
   theme(strip.background = element_blank())+
   stat_ellipse()
+
 
 
 
