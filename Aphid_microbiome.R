@@ -14,7 +14,6 @@ library(DECIPHER)
 library(stringr)
 library(MicrobiotaProcess)
 library(patchwork)
-library(VennDiagram)
 library(DESeq2)
 library(ggbeeswarm)
 library(ggrepel)
@@ -476,5 +475,6 @@ phyloseq::psmelt(ps1_genus_top10) %>%
   geom_jitter(aes(color = Genus), height = 0, width = .2) +
   labs(x = "", y = "Relative abundance\n") +
   facet_wrap(~ OTU, scales = "free")
+
 
 
